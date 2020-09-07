@@ -1,5 +1,5 @@
 # ToDoList
-To Do List with JavaScript + Local Storage...
+To Do List with JavaScript + Local Storage... (OOP)
 
 * Adding ToDo
 * ToDo Counting
