@@ -84,7 +84,7 @@ if (localStorage.toDoItems) {
     ol.innerHTML = localStorage.toDoItems;
   }
 
-
+todoList.toDoCount();
 button.addEventListener('click', todoList.add);
 input.addEventListener('keyup', todoList.enterPress);
 ol.addEventListener('click', todoList.removeToDo);
