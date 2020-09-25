@@ -20,11 +20,11 @@ const todoList = {
                         <span class="remove">Remove</span>
                     </li>
                 `;
-                localStorage["toDoItems"] = ol.innerHTML;          
+                localStorage.toDoItems = ol.innerHTML;          
             } else {
                 alert('Max Length is 20');
             }
-        };
+        }
     
         input.value = '';
         todoList.toDoCount();
@@ -32,13 +32,13 @@ const todoList = {
     enterPress: e => {
         if(e.keyCode === 13) {
             todoList.add();
-        };
+        }
     },
     removeToDo: e => {
         if(e.target.className === 'remove') {
             e.target.parentElement.remove();
-            localStorage["toDoItems"] = ol.innerHTML
-        };
+            localStorage.toDoItems = ol.innerHTML;
+        }
         todoList.toDoCount();
     },
     editToDo: e => {
@@ -50,21 +50,21 @@ const todoList = {
                 return;
             } else {
                 e.target.parentElement.children[0].textContent = text;
-                localStorage["toDoItems"] = ol.innerHTML
+                localStorage.toDoItems = ol.innerHTML;
             }
-        };
+        }
     },
     clearToDo: () => {
         while(ol.firstChild) {
             ol.removeChild(ol.lastChild);
-            localStorage["toDoItems"] = ol.innerHTML
-        };
+            localStorage.toDoItems = ol.innerHTML;
+        }
         todoList.toDoCount();
     },
     checkedToDo: e => {
         if(e.target.classList.contains('text')) {
-            e.target.classList.toggle('checked')
-        };
+            e.target.classList.toggle('checked');
+        }
     },
     searchToDo: e => {
         let list = document.getElementsByClassName('toDoItem');
@@ -75,13 +75,13 @@ const todoList = {
                 list[i].style.display = 'block';
             } else {
                 list[i].style.display = 'none';
-            };
-        };
+            }
+        }
     }
 };
 
-if (localStorage["toDoItems"]) {
-    ol.innerHTML = localStorage["toDoItems"];
+if (localStorage.toDoItems) {
+    ol.innerHTML = localStorage.toDoItems;
   }
 
 
